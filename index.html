@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="./img/medeli.ico" type="image/x-icon">
+
+    <!-- 兼容360浏览器及搜狗等多内核浏览器显示异常的问题，指定运行当前页面的浏览器使用何种渲染引擎的声明 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>MEDELI Dictionary</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+
+    <script type="text/javascript" src="./dest/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./dest/js/jszip.js"></script>
+    <script type="text/javascript" src="./dest/js/xlsx.min.js"></script>
+    <script type="text/javascript" src="./dest/js/FileSaver.js"></script>
+    
+    <script src="./js/store_legacy_min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap-typeahead.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</head>
+<body>
+    <div style="width: 100%; margin: 0; padding: 0;">
+        <img src="./img/logo.png" class="center-block" alt="" class="col-sm-12" style="width: 100%; height: 48px;">
+    </div>
+    <div class="mainView" style="height: 100%">
+
+        
+        
+        <div class="letter" style="width: 100%; margin-top: 5px; font-size: 15px; font-weight: bold; text-align: left;">
+            <a id="a" href="#">A</a>
+            <a id="b" href="#">B</a>
+            <a id="c" href="#">C</a>
+            <a id="d" href="#">D</a>
+            <a id="e" href="#">E</a>
+            <a id="f" href="#">F</a>
+            <a id="g" href="#">G</a>
+            <a id="h" href="#">H</a>
+            <a id="i" href="#">I</a>
+            <a id="j" href="#">J</a>
+            <a id="k" href="#">K</a>
+            <a id="l" href="#">L</a>
+            <a id="m" href="#">M</a>
+            <a id="n" href="#">N</a>
+            <a id="o" href="#">O</a>
+            <a id="p" href="#">P</a>
+            <a id="q" href="#">Q</a>
+            <a id="r" href="#">R</a>
+            <a id="s" href="#">S</a>
+            <a id="t" href="#">T</a>
+            <a id="u" href="#">U</a>
+            <a id="v" href="#">V</a>
+            <a id="w" href="#">W</a>
+            <a id="x" href="#">X</a> 
+            <a id="y" href="#">Y</a>
+            <a id="z" href="#">Z</a>
+        </div>
+        <form class="form1" id="form1" style="margin-top: 5px;">
+            <form class="form-horizontal">
+                <div class="form-group" style="margin-left: -16px; margin-bottom: 5px;">
+                    <label for="englishTxt" class="col-sm-2 control-label">English:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="col-sm-12" id="englishTxt" data-provide="typeahead" style="width: 72%;" >
+                        <div style="float: right;">
+                            <input type="button" id="translate" class="btn btn-success col-sm-2" style="margin-top: -5px" value="翻译">
+                        </div>
+                    </div>
+                </div>
+                <input type="text" class="col-sm-12" id="phonogram" data-provide="typeahead" style="width: 55%; margin-top: -40px;" readonly="readonly">
+                <button type="button" id="voice" class="btn btn-primary btn-xs" style="margin-left: 8px;">
+                    <span class="glyphicon glyphicon-volume-up" aria-hidden="true" style=""></span>    
+                </button>
+                <div class="form-group" style="margin-left: -16px; margin-top: 10px;">
+                   <label for="chineseTxt" class="col-sm-2 control-label">中文:</label>
+                   <div class="col-sm-6">
+                       <input type="text" class="col-sm-6 " id="chineseTxt" style="width: 72%";>
+                       <div style="float: right;">
+                           <input type="button" id="clear" class="btn btn-danger col-sm-2" style="margin-top: -5px" value="清空">
+                       </div>
+                   </div>
+                </div>
+                <div class="form-group" style="margin-left: -16px;">
+                    <label for="yamaha" class="col-sm-2 control-label">Yamaha:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="col-sm-6" id="yamaha" readonly="readonly" data-provide="typeahead" style="width: 72%";>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-left: -16px;">
+                    <label for="casio" class="col-sm-2 control-label">Casio:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="col-sm-6" id="casio" readonly="readonly" data-provide="typeahead" style="width: 72%";>
+                    </div>
+                </div>
+           </form>
+           <label for="">说明：</label>
+           <div id="desc" style="width: 100%; height: 130px; border: solid 1px black; overflow:auto; padding-left: 5px; padding-top: 3px; padding-right: 5px;">
+           </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
