@@ -61,7 +61,7 @@ $(function () {
                         if (sheetArrayJson[z]["C"] != undefined) {
                             voice = sheetArrayJson[z]["C"];
                         } else {
-                            voice = "无";
+                            voice = "";
                         }
 
                         if (sheetArrayJson[z]["D"] != undefined) {
