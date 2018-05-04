@@ -107,6 +107,12 @@ $(function () {
                             english = "无";
                         }
 
+                        if (sheetArrayJson[y]["B"] != undefined) {
+                            phonogram = sheetArrayJson[y]["B"];
+                        } else {
+                            phonogram = "无";
+                        }
+
                         if (sheetArrayJson[y]["E"] != undefined) {
                             yamaha = sheetArrayJson[y]["E"];
                         } else {
@@ -125,7 +131,7 @@ $(function () {
                             desc = "无";
                         }
 
-                        ChineseTemp = { english: english, yamaha: yamaha, casio: casio, desc: desc };
+                        ChineseTemp = { english: english, phonogram: phonogram, yamaha: yamaha, casio: casio, desc: desc };
                         ChineseObj[chinese] = ChineseTemp;
                   }
             }
@@ -146,6 +152,7 @@ $(function () {
                 } else if ($("#chineseTxt").val() && !$("#englishTxt").val()) {
                  if (ChineseObj[$("#chineseTxt").val()]) {
                      $("#englishTxt").val(ChineseObj[$("#chineseTxt").val()]['english']);
+                     $("#phonogram").val(ChineseObj[$("#chineseTxt").val()]['phonogram']);
                      $("#yamaha").val(ChineseObj[$("#chineseTxt").val()]['yamaha']);
                      $("#casio").val(ChineseObj[$("#chineseTxt").val()]['casio']);
                      $("#desc").text(ChineseObj[$("#chineseTxt").val()]['desc']);
