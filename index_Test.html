@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Test</title>
-    <script type="text/javascript" src="./dest/js/jquery-3.1.1.min.js"></script>
+	<meta charset="utf-8">
+	<title>Test</title>
+	<script type="text/javascript" src="./dest/js/jquery-3.1.1.min.js"></script>
 </head>
 <body>
-    <a href="#" id="a">A</a>
-    <input type="text" id="b" />
 
-
-
-    <script>
-        $(function() {
-            $("#a").click(function() {
-                console.log($("#b").val());
-                console.log($("#a").text());
-                $("#b").val($("#b").val() + $("#a").text());
-            });
-        });
-    </script>
+	<!-- <button onclick="playMusic()">播放<button> -->
+		<audio id="player" controls="controls">
+			<source src="./mp3/tts_4k.mp3"/>
+		</audio>
+		<script>
+			function playMusic() {
+				// var player = $("#player")[0]; /*jquery对象转换成js对象*/
+				// if (player.paused){ 如果已经暂停
+				// 	player.play(); /*播放*/
+				// }else {
+				// 	player.pause();/*暂停*/
+				// }
+			}
+		</script>
 </body>
 </html>
 

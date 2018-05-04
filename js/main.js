@@ -34,6 +34,7 @@ $(function () {
 
             var english = "";
             var phonogram = "";
+            var voice = ""
             var chinese = "";
             var yamaha = "";
             var casio = "";
@@ -58,30 +59,36 @@ $(function () {
                         }
 
                         if (sheetArrayJson[z]["C"] != undefined) {
-                            chinese = sheetArrayJson[z]["C"];
+                            voice = sheetArrayJson[z]["C"];
+                        } else {
+                            voice = "无";
+                        }
+
+                        if (sheetArrayJson[z]["D"] != undefined) {
+                            chinese = sheetArrayJson[z]["D"];
                         } else {
                             chinese = "无";
                         }
 
-                        if (sheetArrayJson[z]["D"] != undefined) {
-                            yamaha = sheetArrayJson[z]["D"];
+                        if (sheetArrayJson[z]["E"] != undefined) {
+                            yamaha = sheetArrayJson[z]["E"];
                         } else {
                             yamaha = "无";
                         }
 
-                        if (sheetArrayJson[z]["E"] != undefined) {
-                            casio = sheetArrayJson[z]["E"];
+                        if (sheetArrayJson[z]["F"] != undefined) {
+                            casio = sheetArrayJson[z]["F"];
                         } else {
                             casio = "无";
                         }
 
-                        if (sheetArrayJson[z]["F"] != undefined) {
-                            desc = sheetArrayJson[z]["F"];
+                        if (sheetArrayJson[z]["G"] != undefined) {
+                            desc = sheetArrayJson[z]["G"];
                         } else {
                             desc = "无";
                         }
 
-                        EnglishTemp = { phonogram: phonogram, chinese: chinese, yamaha: yamaha, casio: casio, desc: desc };
+                        EnglishTemp = { phonogram: phonogram, voice: voice, chinese: chinese, yamaha: yamaha, casio: casio, desc: desc };
                         EnglishObj[english] = EnglishTemp;
                   }
             }
@@ -91,7 +98,7 @@ $(function () {
             for(var y=1; y < sheetArrayJson.length; y++){
               if (sheetArrayJson[y]["C"] != undefined) {
 
-                        chinese = sheetArrayJson[y]["C"];
+                        chinese = sheetArrayJson[y]["D"];
                         ChnDatabase.push(chinese);
 
                         if (sheetArrayJson[y]["A"] != undefined) {
@@ -100,20 +107,20 @@ $(function () {
                             english = "无";
                         }
 
-                        if (sheetArrayJson[y]["D"] != undefined) {
-                            yamaha = sheetArrayJson[y]["D"];
+                        if (sheetArrayJson[y]["E"] != undefined) {
+                            yamaha = sheetArrayJson[y]["E"];
                         } else {
                             yamaha = "无";
                         }
 
-                        if (sheetArrayJson[y]["E"] != undefined) {
-                            casio = sheetArrayJson[y]["E"];
+                        if (sheetArrayJson[y]["F"] != undefined) {
+                            casio = sheetArrayJson[y]["F"];
                         } else {
                             casio = "无";
                         }
 
-                        if (sheetArrayJson[y]["F"] != undefined) {
-                            desc = sheetArrayJson[y]["F"];
+                        if (sheetArrayJson[y]["G"] != undefined) {
+                            desc = sheetArrayJson[y]["G"];
                         } else {
                             desc = "无";
                         }
@@ -177,6 +184,20 @@ $(function () {
                         return ChnDatabase;
                   }
             });
+
+
+      $("#voice").click(function() {
+                  if (EnglishObj[$("#englishTxt").val()]['voice']) {
+                    var path = "./mp3/" + EnglishObj[$("#englishTxt").val()]['voice'] + ".mp3";
+                    $("#player").attr('src',path);
+                    var player = $("#player")[0];  
+                    player.play(); 
+                  } else {
+                    alert("发音库中没有该音频！");
+                  }
+                  
+                });
+
 
       };
       oReq.send();
@@ -339,10 +360,6 @@ $(function () {
                 });
 
 
-
-      $("#voice").click(function() {
-                  alert("暂不支持！");
-                });
 
 
 
