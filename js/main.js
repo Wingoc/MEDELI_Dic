@@ -96,7 +96,7 @@ $(function () {
 
 
             for(var y=1; y < sheetArrayJson.length; y++){
-              if (sheetArrayJson[y]["C"] != undefined) {
+              if (sheetArrayJson[y]["D"] != undefined) {
 
                         chinese = sheetArrayJson[y]["D"];
                         ChnDatabase.push(chinese);
@@ -166,24 +166,25 @@ $(function () {
                   $("#desc").text("");
             });
 
+
+            $.fn.typeahead.Constructor.prototype.blur = function() {
+              var that = this;
+              setTimeout(function () { that.hide() }, 250);
+            };
+
             $('#englishTxt').typeahead({
                   source: function(query, process) {
-                        query = $('#englishTxt').val();
-                        return EngDatabase;
-                  },
-                  afterSelect: function(item) {
-                    $("#englishTxt").focus(function(){
-                      document.activeElement.blur();
-                    });
+                    return EngDatabase;
                   }
             });
-
 
             $('#chineseTxt').typeahead({
                   source: function(query, process) {
-                        return ChnDatabase;
+                    return ChnDatabase;
                   }
             });
+
+            
 
 
       $("#voice").click(function() {
@@ -194,11 +195,8 @@ $(function () {
                     player.play(); 
                   } else {
                     alert("发音库中没有该音频！");
-                  }
-                  
+                  }                  
                 });
-
-
       };
       oReq.send();
 
@@ -368,17 +366,7 @@ $(function () {
 
 
 
-// 分割数组函数
-// chunk([1,2,3],2)   >>>   [ [1,2], [3] ]
-var chunk = function (array, size) {
-  var result = [];
-  for (var x = 0; x < Math.ceil(array.length / size); x++) {
-    var start = x * size;
-    var end = start + size;
-    result.push(array.slice(start, end));
-}
-return result;
-};
+
 
 
 
