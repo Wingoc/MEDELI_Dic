@@ -6,7 +6,7 @@
 $(function () {
 
         // 列表的相对路径
-        var url = "./Excels/" + "产品功能列表20180503.xlsx";       
+        var url = "./resources/database/" + "产品功能列表20180503.xlsx";       
 
         var oReq = new XMLHttpRequest();
         oReq.open("GET", url, true);
@@ -194,7 +194,7 @@ $(function () {
             $("#voice").click(function() {
               if ($("#englishTxt").val()) {
                 if (EnglishObj[$("#englishTxt").val()]['voice']) {
-                  var path = "./mp3/" + EnglishObj[$("#englishTxt").val()]['voice'] + ".mp3";
+                  var path = "./resources/mp3/" + EnglishObj[$("#englishTxt").val()]['voice'] + ".mp3";
                   $("#player").attr('src',path);
                   var player = $("#player")[0];  
                   player.play(); 
@@ -204,7 +204,7 @@ $(function () {
               }
             });
           };
-          
+
       oReq.send();
 
       $("#a").click(function() {
