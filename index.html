@@ -23,14 +23,44 @@
     <script type="text/javascript" src="./js/main.js"></script>
 </head>
 <body>
-    <div style="width: 100%; margin: 0; padding: 0;">
-        <img src="./img/logo.png" class="center-block" alt="" class="col-sm-12" style="height: 24px; margin-left: 0;">
+    <div style="margin: 0; padding: 0; margin-right: 15%;">
+        <img src="./img/logo.png" class="center-block" alt="" class="col-sm-12" style="width: 90%; height: 48px;">
+    </div>
+    <div style="float: right; margin-left: -30px; margin-right: 8px; margin-top: -38px;">
+    <ul style="list-style: none; font-weight: bold; ">
+        <li><a id="a" href="#">A</a></li>
+        <li><a id="b" href="#">B</a></li>
+        <li><a id="c" href="#">C</a></li>
+        <li><a id="d" href="#">D</a></li>
+        <li><a id="e" href="#">E</a></li>
+        <li><a id="f" href="#">F</a></li>
+        <li><a id="g" href="#">G</a></li>
+        <li><a id="h" href="#">H</a></li>
+        <li><a id="i" href="#">I</a></li>
+        <li><a id="j" href="#">J</a></li>
+        <li><a id="k" href="#">K</a></li>
+        <li><a id="l" href="#">L</a></li>
+        <li><a id="m" href="#">M</a></li>
+        <li><a id="n" href="#">N</a></li>
+        <li><a id="o" href="#">O</a></li>
+        <li><a id="p" href="#">P</a></li>
+        <li><a id="q" href="#">Q</a></li>
+        <li><a id="r" href="#">R</a></li>
+        <li><a id="s" href="#">S</a></li>
+        <li><a id="t" href="#">T</a></li>
+        <li><a id="u" href="#">U</a></li>
+        <li><a id="v" href="#">V</a></li>
+        <li><a id="w" href="#">W</a></li>
+        <li><a id="x" href="#">X</a></li>
+        <li><a id="y" href="#">Y</a></li>
+        <li><a id="z" href="#">Z</a></li>
+    </ul>
     </div>
     <div class="mainView" style="height: 100%">
 
         
         
-        <div class="letter" style="width: 100%; margin-top: 0; font-size: 18px; font-weight: bold; text-align: left;">
+        <!-- <div class="letter" style="width: 100%; margin-top: 5px; font-size: 15px; font-weight: bold; text-align: left; padding-right: 8px; background-color: #ddd; border-radius: 5px; background-image: url(./img/blogo4.jpg); background-repeat: no-repeat;">
             <a id="a" href="#">A</a>
             <a id="b" href="#">B</a>
             <a id="c" href="#">C</a>
@@ -57,19 +87,22 @@
             <a id="x" href="#">X</a> 
             <a id="y" href="#">Y</a>
             <a id="z" href="#">Z</a>
-        </div>
-        <form class="form1" id="form1" style="margin-top: 5px;">
+        </div> -->
+        
+        <form class="form1" id="form1" style="margin-top: 15px;">
             <form class="form-horizontal">
                 <div class="form-group" style="margin-left: -16px; margin-bottom: 5px;">
                     <label for="englishTxt" class="col-sm-2 control-label">English:</label>
+                    <input type="button" id="clear" class="btn btn-danger btn-xs col-sm-2" style="margin-top: -3px; float: right; margin-right: 25px;" value="清空">
+                    <input type="button" id="translate" class="btn btn-success btn-xs col-sm-2" style="margin-top: -3px; float: right; margin-right: 25px;" value="翻译">
                     <div class="col-sm-6">
-                        <input type="text" class="col-sm-12" id="englishTxt" data-provide="typeahead" style="width: 72%; padding-left: 5px;" />
+                        <input type="text" class="col-sm-12" id="englishTxt" data-provide="typeahead" style="width: 100%; padding-left: 5px;" />
                         <div style="float: right;">
-                            <input type="button" id="translate" class="btn btn-success col-sm-2" style="margin-top: -5px" value="翻译">
+                            <!-- <input type="button" id="translate" class="btn btn-success btn-xs col-sm-2" style="margin-top: -5px" value="翻译"> -->
                         </div>
                     </div>
                 </div>
-                <input type="text" class="col-sm-12" id="phonogram" style="width: 55%; margin-top: -40px; padding-left: 5px;" readonly="readonly">
+                <input type="text" class="col-sm-12" id="phonogram" style="width: 75%; margin-top: -40px; padding-left: 5px;" readonly="readonly">
                 <button type="button" id="voice" class="btn btn-primary btn-xs" style="margin-left: 8px;">
                     <span class="glyphicon glyphicon-volume-up" aria-hidden="true" style=""></span>    
                 </button>
@@ -78,27 +111,27 @@
                 <div class="form-group" style="margin-left: -16px; margin-top: 10px;">
                    <label for="chineseTxt" class="col-sm-2 control-label">中文:</label>
                    <div class="col-sm-6">
-                       <input type="text" class="col-sm-12" id="chineseTxt" data-provide="typeahead" style="width: 72%; padding-left: 5px;" />
+                       <input type="text" class="col-sm-12" id="chineseTxt" data-provide="typeahead" style="width: 100%; padding-left: 5px;" />
                        <div style="float: right;">
-                           <input type="button" id="clear" class="btn btn-danger col-sm-2" style="margin-top: -5px;" value="清空">
+                           <!-- <input type="button" id="clear" class="btn btn-danger col-sm-2" style="margin-top: -5px;" value="清空"> -->
                        </div>
                    </div>
                 </div>
                 <div class="form-group" style="margin-left: -16px;">
                     <label for="yamaha" class="col-sm-2 control-label">Yamaha:</label>
                     <div class="col-sm-6">
-                        <input type="text" class="col-sm-6" id="yamaha" readonly="readonly" style="width: 72%; padding-left: 5px;";>
+                        <input type="text" class="col-sm-6" id="yamaha" readonly="readonly" style="width: 100%; padding-left: 5px;";>
                     </div>
                 </div>
                 <div class="form-group" style="margin-left: -16px;">
                     <label for="casio" class="col-sm-2 control-label">Casio:</label>
                     <div class="col-sm-6">
-                        <input type="text" class="col-sm-6" id="casio" readonly="readonly" style="width: 72%; padding-left: 5px;">
+                        <input type="text" class="col-sm-6" id="casio" readonly="readonly" style="width: 100%; padding-left: 5px;">
                     </div>
                 </div>
            </form>
            <label for="">说明：</label>
-           <div id="desc" style="width: 100%; height: 135px; border: solid 1px #888; overflow:auto; padding-left: 5px; padding-top: 3px; padding-right: 5px; background-color: white;">
+           <div id="desc" style="width: 95%; height: 170px; border: solid 1px #888; overflow:auto; padding-left: 5px; padding-top: 3px; padding-right: 5px; background-color: white;">
            </div>
     </form>
 </body>

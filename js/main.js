@@ -191,20 +191,20 @@ $(function () {
                   }
             });
 
-            
-
-
-      $("#voice").click(function() {
-                  if (EnglishObj[$("#englishTxt").val()]['voice']) {
-                    var path = "./mp3/" + EnglishObj[$("#englishTxt").val()]['voice'] + ".mp3";
-                    $("#player").attr('src',path);
-                    var player = $("#player")[0];  
-                    player.play(); 
-                  } else {
-                    alert("发音库中没有该音频！");
-                  }                  
-                });
-      };
+            $("#voice").click(function() {
+              if ($("#englishTxt").val()) {
+                if (EnglishObj[$("#englishTxt").val()]['voice']) {
+                  var path = "./mp3/" + EnglishObj[$("#englishTxt").val()]['voice'] + ".mp3";
+                  $("#player").attr('src',path);
+                  var player = $("#player")[0];  
+                  player.play(); 
+                } else {
+                  alert("发音库中没有该音频！");
+                }
+              }
+            });
+          };
+          
       oReq.send();
 
       $("#a").click(function() {
