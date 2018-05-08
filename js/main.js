@@ -1,12 +1,12 @@
 ﻿/**
- * Created by xianbr on 2018/5/03.
+ * Created by xianbr on 2018/5/08.
  */
 
 // 导入通用列表
 $(function () {
 
         // 列表的相对路径
-        var url = "./resources/database/" + "产品功能列表20180503.xlsx";       
+        var url = "./resources/database/" + "产品功能列表20180508.xlsx";       
 
         var oReq = new XMLHttpRequest();
         oReq.open("GET", url, true);
@@ -39,7 +39,6 @@ $(function () {
             var yamaha = "";
             var casio = "";
             var desc = "";
-
 
             var sheet = workbook.Sheets["Sheet1"];
             // 将要处理的sheet转换为数组json对象：[{ }, { }, { }]
@@ -92,7 +91,6 @@ $(function () {
                         EnglishObj[english] = EnglishTemp;
                   }
             }
-
 
 
             for(var y=1; y < sheetArrayJson.length; y++){
@@ -210,175 +208,131 @@ $(function () {
       $("#a").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'a');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#b").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'b');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#c").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'c');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#d").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'd');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#e").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'e');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#f").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'f');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#g").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'g');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#h").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'h');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#i").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'i');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#j").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'j');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#k").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'k');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#l").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'l');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#m").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'm');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#n").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'n');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#o").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'o');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#p").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'p');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#q").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'q');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#r").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'r');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#s").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 's');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#t").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 't');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#u").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'u');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#v").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'v');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#w").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'w');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#x").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'x');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#y").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'y');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
       $("#z").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'z');
                   e = $.Event("keyup");
-                  // e.keyCode = 65;
                   $('#englishTxt').trigger(e);
                 });
-
-
-
-
-
 });
-
-
-
-
-
-
-
-
-   
-
-
-
-
