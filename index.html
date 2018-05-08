@@ -7,7 +7,7 @@
     <!-- 兼容360浏览器及搜狗等多内核浏览器显示异常的问题，指定运行当前页面的浏览器使用何种渲染引擎的声明 -->
     <meta http-equiv="X-UA-Compatible" content="IE=9">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
 
     <title>MEDELI Dictionary</title>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
@@ -22,12 +22,12 @@
     <script type="text/javascript" src="./js/bootstrap-typeahead.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
 </head>
-<body>
+<body style="max-width: 400px;">
     <div style="margin: 0; padding: 0; margin-right: 20%;">
-        <img src="./resources/img/logo.png" class="" alt="" class="col-sm-12" style="width: 90%; height: 48px;">
+        <img src="./resources/img/logo.svg" class="" alt="" class="col-sm-12" style="">
     </div>
     <div style="float: right; margin-left: -30px; margin-right: 5px; margin-top: -38px;">
-        <ul style="list-style: none; font-weight: bold; font-size: 15px;">
+        <ul style="list-style: none; font-weight: bold; font-size: 15px; text-align: center;">
             <li><a id="a" href="#">A</a></li>
             <li><a id="b" href="#">B</a></li>
             <li><a id="c" href="#">C</a></li>
@@ -57,20 +57,22 @@
         </ul>
     </div>
     <div class="mainView" style="height: 100%">   
-        <form class="form1" id="form1" style="margin-top: 15px;">
+        <form class="form1" id="form1" style="margin-top: 10px;">
             <form class="form-horizontal">
                 <div class="form-group" style="margin-left: -16px; margin-bottom: 5px;">
                     <label for="englishTxt" class="col-sm-2 control-label">English:</label>
-                    <input type="button" id="clear" class="btn btn-danger btn-xs col-sm-2" style="margin-top: -3px; float: right; margin-right: 25px;" value="清空">
-                    <input type="button" id="translate" class="btn btn-success btn-xs col-sm-2" style="margin-top: -3px; float: right; margin-right: 25px;" value="翻译">
+                    <button type="button" id="clear" class="btn btn-danger btn-xs col-sm-2" style="margin-top: -5px; float: right; margin-right: 25px; font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 清空 
+                    </button>
+                    <button type="button" id="translate" class="btn btn-success btn-xs col-sm-2" style="margin-top: -5px; float: right; margin-right: 20px; font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> 翻译 
+                    </button>
                     <div class="col-sm-6">
                         <input type="text" class="col-sm-12" id="englishTxt" data-provide="typeahead" style="width: 100%; padding-left: 5px;" />
                     </div>
                 </div>
-                <input type="text" class="col-sm-12" id="phonogram" style="width: 75%; margin-top: -40px; padding-left: 5px;" readonly="readonly">
-                <button type="button" id="voice" class="btn btn-primary btn-xs" style="margin-left: 8px;">
-                    <span class="glyphicon glyphicon-volume-up" aria-hidden="true" style=""></span>    
-                </button>
+                <input type="text" class="col-sm-12" id="phonogram" style="width: 75%; margin-top: 0px; padding-left: 5px;" readonly="readonly">
+                <img src="./resources/img/speak.svg" id="voice" alt="">
                 <audio id="player" src="" display="none">
                 </audio>
                 <div class="form-group" style="margin-left: -16px; margin-top: 10px;">
@@ -80,13 +82,13 @@
                  </div>
              </div>
              <div class="form-group" style="margin-left: -16px;">
-                <label for="yamaha" class="col-sm-2 control-label">Yamaha:</label>
+                <label for="" class="col-sm-2 control-label">Yamaha:</label>
                 <div class="col-sm-6">
                     <input type="text" class="col-sm-6" id="yamaha" readonly="readonly" style="width: 100%; padding-left: 5px;";>
                 </div>
             </div>
             <div class="form-group" style="margin-left: -16px;">
-                <label for="casio" class="col-sm-2 control-label">Casio:</label>
+                <label for="" class="col-sm-2 control-label">Casio:</label>
                 <div class="col-sm-6">
                     <input type="text" class="col-sm-6" id="casio" readonly="readonly" style="width: 100%; padding-left: 5px;">
                 </div>
