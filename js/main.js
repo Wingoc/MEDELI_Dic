@@ -5,7 +5,7 @@
 // 导入通用列表
 $(function () {
 
-        // 列表的相对路径
+        // 列表路径
         var url = "./resources/database/" + "产品功能列表20180508.xlsx";       
 
         var oReq = new XMLHttpRequest();
@@ -17,9 +17,9 @@ $(function () {
             var arr = [];
             for (var i = 0; i != data.length; ++i)
                   arr[i] = String.fromCharCode(data[i]);
+
             var bstr = arr.join("");
-            // 获取到的Excel对象
-            var workbook = XLSX.read(bstr, {type: "binary"});
+            var workbook = XLSX.read(bstr, {type: "binary"});    // Excel对象
 
             console.log("表格导入成功！");
 
@@ -34,7 +34,7 @@ $(function () {
 
             var english = "";
             var phonogram = "";
-            var voice = ""
+            var voice = "";
             var chinese = "";
             var yamaha = "";
             var casio = "";
@@ -43,7 +43,6 @@ $(function () {
             var sheet = workbook.Sheets["Sheet1"];
             // 将要处理的sheet转换为数组json对象：[{ }, { }, { }]
             var sheetArrayJson = XLSX.utils.sheet_to_json(sheet, {header: "A"});
-            // console.log(sheetArrayJson);
 
             for(var z=1; z < sheetArrayJson.length; z++){
             	if (sheetArrayJson[z]["A"] != "…") {
@@ -180,7 +179,8 @@ $(function () {
             $('#englishTxt').typeahead({
                   source: function(query, process) {
                     return EngDatabase;
-                  }
+                  },
+                  items: 50
             });
 
             $('#chineseTxt').typeahead({
@@ -209,6 +209,7 @@ $(function () {
                   $("#englishTxt").val($("#englishTxt").val() + 'a');
                   e = $.Event("keyup");
                   $('#englishTxt').trigger(e);
+
                 });
       $("#b").click(function() {
                   $("#englishTxt").val($("#englishTxt").val() + 'b');
