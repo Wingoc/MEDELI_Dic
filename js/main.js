@@ -6,7 +6,7 @@
 $(function () {
 
         // 列表路径
-        var url = "./resources/database/" + "产品功能列表20180508.xlsx";       
+        var url = "./resources/database/" + "产品功能列表20180515.xlsx";       
 
         var oReq = new XMLHttpRequest();
         oReq.open("GET", url, true);
@@ -44,52 +44,87 @@ $(function () {
             // 将要处理的sheet转换为数组json对象：[{ }, { }, { }]
             var sheetArrayJson = XLSX.utils.sheet_to_json(sheet, {header: "A"});
 
+            // var category = ["VOICE", "STYLE", "PRODUCTION", "OTHER", "MUSIC", "FUNCTION", "EFFECT", "CONNECTOR"]
+
             for(var z=1; z < sheetArrayJson.length; z++){
-            	if (sheetArrayJson[z]["A"] != "…") {
+            	if (sheetArrayJson[z]["A"]) {
 
-                english = sheetArrayJson[z]["A"];
-                EngDatabase.push(english);
+                // if (category.indexOf(sheetArrayJson[z]["A"]) == -1) {
+                  english = sheetArrayJson[z]["A"];
+                  EngDatabase.push(english);
 
-                if (sheetArrayJson[z]["B"] != undefined) {
-                  phonogram = sheetArrayJson[z]["B"];
-                } else {
-                  phonogram = "无";
-                }
+                  if (sheetArrayJson[z]["B"] != undefined) {
+                    phonogram = sheetArrayJson[z]["B"];
+                  } else {
+                    phonogram = "无";
+                  }
 
-                if (sheetArrayJson[z]["C"] != undefined) {
-                  voice = sheetArrayJson[z]["C"];
-                } else {
-                  voice = "";
-                }
+                  if (sheetArrayJson[z]["C"] != undefined) {
+                    voice = sheetArrayJson[z]["C"];
+                  } else {
+                    voice = "";
+                  }
 
-                if (sheetArrayJson[z]["D"] != undefined) {
-                  chinese = sheetArrayJson[z]["D"];
-                } else {
-                  chinese = "无";
-                }
+                  if (sheetArrayJson[z]["D"] != undefined) {
+                    chinese = sheetArrayJson[z]["D"];
+                  } else {
+                    chinese = "无";
+                  }
 
-                if (sheetArrayJson[z]["E"] != undefined) {
-                  yamaha = sheetArrayJson[z]["E"];
-                } else {
-                  yamaha = "无";
-                }
+                  if (sheetArrayJson[z]["E"] != undefined) {
+                    yamaha = sheetArrayJson[z]["E"];
+                  } else {
+                    yamaha = "无";
+                  }
 
-                if (sheetArrayJson[z]["F"] != undefined) {
-                  casio = sheetArrayJson[z]["F"];
-                } else {
-                  casio = "无";
-                }
+                  if (sheetArrayJson[z]["F"] != undefined) {
+                    casio = sheetArrayJson[z]["F"];
+                  } else {
+                    casio = "无";
+                  }
 
-                if (sheetArrayJson[z]["G"] != undefined) {
-                  desc = sheetArrayJson[z]["G"];
-                } else {
-                  desc = "无";
-                }
+                  if (sheetArrayJson[z]["G"] != undefined) {
+                    desc = sheetArrayJson[z]["G"];
+                  } else {
+                    desc = "无";
+                  }
 
-                EnglishTemp = { phonogram: phonogram, voice: voice, chinese: chinese, yamaha: yamaha, casio: casio, desc: desc };
-                EnglishObj[english] = EnglishTemp;
+                  EnglishTemp = { phonogram: phonogram, voice: voice, chinese: chinese, yamaha: yamaha, casio: casio, desc: desc };
+                  EnglishObj[english] = EnglishTemp;
+                // } 
               }
             }
+
+            // console.log(EnglishObj);
+
+            var voiceIndex = EngDatabase.indexOf("VOICE");
+            var styleIndex = EngDatabase.indexOf("STYLE");
+            var productionIndex = EngDatabase.indexOf("PRODUCTION");
+            var otherIndex = EngDatabase.indexOf("OTHER");
+            var musicIndex = EngDatabase.indexOf("MUSIC");
+            var functionIndex = EngDatabase.indexOf("FUNCTION");
+            var effectIndex = EngDatabase.indexOf("EFFECT");
+            var connectorIndex = EngDatabase.indexOf("CONNECTOR");
+
+
+            var voiceDatabase = EngDatabase.slice(voiceIndex + 1, styleIndex);
+            var styleDatabase = EngDatabase.slice(styleIndex + 1, productionIndex);
+            var productionDatabase = EngDatabase.slice(productionIndex + 1, otherIndex);
+            var otherDatabase = EngDatabase.slice(otherIndex + 1, musicIndex);
+            var musicDatabase = EngDatabase.slice(musicIndex + 1, functionIndex);
+            var functionDatabase = EngDatabase.slice(functionIndex + 1, effectIndex);
+            var effectDatabase = EngDatabase.slice(effectIndex + 1, connectorIndex);
+            var connectorDatabase = EngDatabase.slice(connectorIndex + 1, EngDatabase.length);
+
+
+            // console.log(voiceDatabase);
+            // console.log(styleDatabase);
+            // console.log(productionDatabase);
+            // console.log(otherDatabase);
+            // console.log(musicDatabase);
+            // console.log(functionDatabase);
+            // console.log(effectDatabase);
+            // console.log(connectorDatabase);
 
 
             for(var y=1; y < sheetArrayJson.length; y++){
@@ -162,7 +197,7 @@ $(function () {
            });
 
             $("#clear").click(function() {
-              $("#englishTxt").val("");
+              $("#englishTxt").val("").blur();
               $("#phonogram").val("");
               $("#chineseTxt").val("");
               $("#yamaha").val("");
@@ -180,7 +215,8 @@ $(function () {
               source: function(query, process) {
                 return EngDatabase;
               },
-              items: 50
+              items: 50,
+              minLength: 1
             });
 
             $('#chineseTxt').typeahead({
@@ -189,6 +225,54 @@ $(function () {
               }
             });
 
+
+            $("#VOICE").click(function() {
+              $("#englishTxt").val(voiceDatabase[0]);
+              $("#translate").click();
+            });
+            
+            $("#STYLE").click(function() {
+              console.log(styleDatabase[0]);
+              $("#englishTxt").val(styleDatabase[0]);
+              $("#translate").click();
+            });
+
+            $("#PRODUCTION").click(function() {
+              $("#englishTxt").val(productionDatabase[0]);
+              $("#translate").click();
+            });
+
+            $("#OTHER").click(function() {
+              $("#englishTxt").val(otherDatabase[0]);
+              $("#translate").click();
+            });
+
+            $("#MUSIC").click(function() {
+              $("#englishTxt").val(musicDatabase[0]);
+              $("#translate").click();
+            });
+            
+            $("#FUNCTION").click(function() {
+              $("#englishTxt").val(functionDatabase[0]);
+              $("#translate").click();
+            });
+
+            $("#EFFECT").click(function() {
+              $("#englishTxt").val(effectDatabase[0]);
+              $("#translate").click();
+            });
+
+            $("#CONNECTOR").click(function() {
+              $("#englishTxt").val(connectorDatabase[0]);
+              $("#translate").click();
+            });
+
+
+
+
+
+
+            // 发音
             $("#voice").click(function() {
               if ($("#englishTxt").val()) {
                 if (EnglishObj[$("#englishTxt").val()]['voice']) {
