@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Created by xianbr on 2018/5/08.
  */
 
@@ -211,11 +211,38 @@ $(function () {
                 if (EngDatabase[index]) {
                   $("#clear").click();
                   $("#englishTxt").val(EngDatabase[index]);
-                }
-              } else {
-                return;
-              }
-            });
+
+                  // 微信内置浏览器不支持按钮模拟点击事件，浏览器正常
+                  // $("#translate").click();   
+
+                  if ($("#englishTxt").val()) {
+                   if (EnglishObj[$("#englishTxt").val()]) {
+                     $("#phonogram").val(EnglishObj[$("#englishTxt").val()]['phonogram']);
+                     $("#chineseTxt").val(EnglishObj[$("#englishTxt").val()]['chinese']);
+                     $("#yamaha").val(EnglishObj[$("#englishTxt").val()]['yamaha']);
+                     $("#casio").val(EnglishObj[$("#englishTxt").val()]['casio']);
+                     $("#desc").text(EnglishObj[$("#englishTxt").val()]['desc']);
+                   } else {
+                     alert("词库中没有找到该英文!");
+                   }
+                 } else if ($("#chineseTxt").val() && !$("#englishTxt").val()) {
+                   if (ChineseObj[$("#chineseTxt").val()]) {
+                     $("#englishTxt").val(ChineseObj[$("#chineseTxt").val()]['english']);
+                     $("#phonogram").val(ChineseObj[$("#chineseTxt").val()]['phonogram']);
+                     $("#yamaha").val(ChineseObj[$("#chineseTxt").val()]['yamaha']);
+                     $("#casio").val(ChineseObj[$("#chineseTxt").val()]['casio']);
+                     $("#desc").text(ChineseObj[$("#chineseTxt").val()]['desc']);
+                   } else {
+                     alert("词库中没有找到该中文!");
+                   }
+                 } else if (!$("#chineseTxt").val() && !$("#englishTxt").val()) {
+                   alert("请输入英文或中文!");
+                 }
+               }
+             } else {
+              return;
+            }
+          });
 
 
             // prev
@@ -227,11 +254,39 @@ $(function () {
                 if (EngDatabase[index]) {
                   $("#clear").click();
                   $("#englishTxt").val(EngDatabase[index]);
-                }
-              } else {
-                return;
-              }
-            });
+                  
+
+                  // 微信内置浏览器不支持按钮模拟点击事件，浏览器正常
+                  // $("#translate").click();   
+
+                  if ($("#englishTxt").val()) {
+                   if (EnglishObj[$("#englishTxt").val()]) {
+                     $("#phonogram").val(EnglishObj[$("#englishTxt").val()]['phonogram']);
+                     $("#chineseTxt").val(EnglishObj[$("#englishTxt").val()]['chinese']);
+                     $("#yamaha").val(EnglishObj[$("#englishTxt").val()]['yamaha']);
+                     $("#casio").val(EnglishObj[$("#englishTxt").val()]['casio']);
+                     $("#desc").text(EnglishObj[$("#englishTxt").val()]['desc']);
+                   } else {
+                     alert("词库中没有找到该英文!");
+                   }
+                 } else if ($("#chineseTxt").val() && !$("#englishTxt").val()) {
+                   if (ChineseObj[$("#chineseTxt").val()]) {
+                     $("#englishTxt").val(ChineseObj[$("#chineseTxt").val()]['english']);
+                     $("#phonogram").val(ChineseObj[$("#chineseTxt").val()]['phonogram']);
+                     $("#yamaha").val(ChineseObj[$("#chineseTxt").val()]['yamaha']);
+                     $("#casio").val(ChineseObj[$("#chineseTxt").val()]['casio']);
+                     $("#desc").text(ChineseObj[$("#chineseTxt").val()]['desc']);
+                   } else {
+                     alert("词库中没有找到该中文!");
+                   }
+                 } else if (!$("#chineseTxt").val() && !$("#englishTxt").val()) {
+                   alert("请输入英文或中文!");
+                 }
+               }
+             } else {
+              return;
+            }    
+          });
 
 
 
@@ -305,7 +360,7 @@ $(function () {
             $("#englishTxt").val($("#englishTxt").val() + 'm');
             e = $.Event("keyup");
             $('#englishTxt').trigger(e);
-          });
+          }); 
           $("#n").click(function() {
             $("#englishTxt").val($("#englishTxt").val() + 'n');
             e = $.Event("keyup");
