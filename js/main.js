@@ -209,7 +209,7 @@ $(function () {
               if (index) {
                 index = index + 1;
                 if (EngDatabase[index]) {
-                  $("#clear").click();
+                  // $("#clear").click();
                   $("#englishTxt").val(EngDatabase[index]);
 
                   // 微信内置浏览器不支持按钮模拟点击事件，浏览器正常
@@ -252,7 +252,7 @@ $(function () {
               if (index) {
                 index = index - 1;
                 if (EngDatabase[index]) {
-                  $("#clear").click();
+                  // $("#clear").click();
                   $("#englishTxt").val(EngDatabase[index]);
                   
 
