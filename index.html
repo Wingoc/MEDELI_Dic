@@ -62,47 +62,47 @@
 			<form class="form-horizontal">
 				<div class="form-group" style="margin-left: -16px; margin-bottom: 5px;">
 					<label for="englishTxt" class="col-sm-2 control-label">English:</label>
-					<div class="dropdown" style="float: right; margin-right: 5px; margin-top: -5px;">
-						<button class="btn btn-primary btn-xs dropdown-toggle" style="font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							Study
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenu1" style="margin-left: -10px; width: 30px;">
-							<li><a>VOICE</a></li>
-							<li><a>STYLE</a></li>
-							<li><a>SONG</a></li>
-							<li><a>FUNCTION</a></li>
-							<li><a>OTHERS</a></li>
-						</ul>
-					</div>
-					<button type="button" id="clear" class="btn btn-danger btn-xs col-sm-1" style="margin-top: -5px; float: right; margin-right: 10px; font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;">
+					
+					<button type="button" id="clear" class="btn btn-danger btn-xs col-sm-1" style="margin-top: -5px; float: right; margin-right: 5px; font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;">
 						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 清空 
 					</button>
-					<button type="button" id="translate" class="btn btn-success btn-xs col-sm-1" style="margin-top: -5px; float: right; margin-right: 5px; font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;">
+					<button type="button" id="translate" class="btn btn-primary btn-xs col-sm-1" style="margin-top: -5px; float: right; margin-right: 5px; font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;">
 						<span class="glyphicon glyphicon-search" aria-hidden="true"></span> 翻译 
 					</button>
+					<div class="dropdown" style="float: right; margin-right: 5px; margin-top: -5px;">
+						<button class="btn btn-success btn-xs dropdown-toggle" style="font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+						学习
+						<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="min-width: 130px;">
+							<li><a style="font-weight: bold;">VOICE</a></li>
+							<li><a style="font-weight: bold;">STYLE</a></li>
+							<li><a style="font-weight: bold;">SONG</a></li>
+							<li><a style="font-weight: bold;">FUNCTION</a></li>
+							<li><a style="font-weight: bold;">OTHERS</a></li>
+						</ul>
+					</div>
 
 					<div class="col-sm-6">
 						<input type="text" class="col-sm-12" id="englishTxt" data-provide="typeahead" style="width: 100%; padding-left: 5px;" />
 					</div>
+
 				</div>
 				<input type="text" class="col-sm-12" id="phonogram" style="width: 65%; margin-top: 0px; padding-left: 5px;" readonly="readonly">
 				<img src="./resources/img/speak.svg" id="voice" alt="">
 				<audio id="player" src="" display="none">
 				</audio>
-				<button type="button" id="prev" class="btn btn-primary btn-xs col-sm-1" style="margin-top: 0px; float: right; margin-right: 10px; font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;">
+				<button type="button" id="prev" class="btn btn-success btn-xs col-sm-1" style="margin-top: 0px; float: right; margin-right: 10px; font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;">
 					<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
 				</button>
 				<div class="form-group" style="margin-left: -16px; margin-top: 0px;">
 					<label for="chineseTxt" class="col-sm-2 control-label">中文:</label>
 					<div class="col-sm-6">
 						<input type="text" class="col-sm-12" id="chineseTxt" data-provide="typeahead" style="width: 80%; padding-left: 5px;" />
-						<button type="button" id="next" class="btn btn-primary btn-xs col-sm-1" style="margin-top: 0px; float: right; margin-right: 3px; font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;">
+						<button type="button" id="next" class="btn btn-success btn-xs col-sm-1" style="margin-top: 0px; float: right; margin-right: 3px; font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;">
 							<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span> 
 						</button>
-						<!-- <button type="button" id="prev" class="btn btn-primary btn-xs col-sm-1" style="margin-top: 0px; float: right; margin-right: 7px; font-size: 14px; font-weight: bold; padding-top: 3px; padding-bottom: 0px;">
-							<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
-						</button> -->
 					</div>
 				</div>
 				<div class="form-group" style="margin-left: -16px;">
