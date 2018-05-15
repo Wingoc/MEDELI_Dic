@@ -212,10 +212,10 @@ $(function () {
                   $("#englishTxt").val(EngDatabase[index]);
                   $("#translate").click(); 
                 }
-             } else {
-              return;
-            }
-          });
+              } else {
+                return;
+              }
+            });
 
 
             // prev
@@ -227,18 +227,12 @@ $(function () {
                 if (EngDatabase[index]) {
                   $("#englishTxt").val(EngDatabase[index]);
                   $("#translate").click();   
-               }
-             } else {
-              return;
-            }    
-          });
-
-
-
-
+                }
+              } else {
+                return;
+              }    
+            });
           };
-
-          oReq.send();
 
           $("#a").click(function() {
             $("#englishTxt").val($("#englishTxt").val() + 'a');
@@ -372,8 +366,5 @@ $(function () {
             $('#englishTxt').trigger(e);
           });
 
-
-
-
-
+          oReq.send();
         });
