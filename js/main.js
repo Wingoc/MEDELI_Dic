@@ -232,7 +232,6 @@ $(function () {
             });
             
             $("#STYLE").click(function() {
-              console.log(styleDatabase[0]);
               $("#englishTxt").val(styleDatabase[0]);
               $("#translate").click();
             });
@@ -322,7 +321,7 @@ $(function () {
             $("#englishTxt").val($("#englishTxt").val() + 'a');
             e = $.Event("keyup");
             $('#englishTxt').trigger(e);
-
+            // $('#englishTxt').blur();
           });
           $("#b").click(function() {
             $("#englishTxt").val($("#englishTxt").val() + 'b');
